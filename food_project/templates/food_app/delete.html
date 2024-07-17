@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>confirm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+    <form method="post">
+        {% csrf_token %}
+        <h1>Do you really want to delete Food of title
+            <span class="text-danger">{{obj.title}}</span>
+        </h1>
+        <center>
+        <button type="submit" class="btn btn-primary">Yes</button>
+        <a class="btn btn-warning" href="{% url 'data_url' %}">No</a>
+        </center>
+    </form>
+</body>
+</html>
